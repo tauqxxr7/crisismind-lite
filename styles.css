@@ -44,7 +44,9 @@ textarea {
 }
 
 .badge,
-.safety-pill {
+.safety-pill,
+.powered-pill,
+.powered-mini {
   display: inline-flex;
   align-items: center;
   width: fit-content;
@@ -54,6 +56,18 @@ textarea {
   font-size: 0.86rem;
   font-weight: 800;
   padding: 8px 12px;
+}
+
+.powered-pill {
+  background: #eef4ff;
+  color: #2457a6;
+}
+
+.powered-mini {
+  background: #eef4ff;
+  color: #2457a6;
+  font-size: 0.78rem;
+  justify-content: center;
 }
 
 h1 {
@@ -208,6 +222,12 @@ textarea:focus {
   text-align: center;
 }
 
+.result-meta {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
+}
+
 .severity.low {
   background: var(--green);
 }
@@ -268,6 +288,10 @@ li {
   .card-header,
   .result-top {
     flex-direction: column;
+  }
+
+  .result-meta {
+    justify-items: start;
   }
 
   .app-card,

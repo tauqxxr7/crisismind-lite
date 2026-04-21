@@ -15,6 +15,7 @@ Search results can be slow, support pages can be confusing, and generic chatbot 
 - Clean one-page web interface.
 - Free-text crisis situation input.
 - `Analyze Situation` button for instant triage.
+- Visible **Powered by Google Gemini AI** label in the demo UI.
 - Google Gemini-powered analysis through a small Node.js server.
 - Output includes:
   - Crisis Type
@@ -91,37 +92,71 @@ Suggested narration:
 
 ## Screenshots
 
-Add final prototype screenshots here before submission.
+Add final prototype screenshots here before submission. The simplest approach is to create a folder named `screenshots`, add PNG/JPG files there, commit them, and reference them using GitHub Markdown.
+
+### How To Add Images In GitHub Markdown
+
+1. Create a folder:
+
+```text
+screenshots/
+```
+
+2. Save your screenshots with simple names:
+
+```text
+screenshots/home.png
+screenshots/otp-result.png
+screenshots/hacked-instagram.png
+screenshots/fire-result.png
+```
+
+3. Add images in this README using this syntax:
+
+```md
+![Home analyzer](screenshots/home.png)
+![OTP scam result](screenshots/otp-result.png)
+![Hacked Instagram result](screenshots/hacked-instagram.png)
+![Fire emergency result](screenshots/fire-result.png)
+```
+
+4. Commit and push:
+
+```bash
+git add screenshots README.md
+git commit -m "Add prototype screenshots"
+git push
+```
 
 ### Home / Analyzer
 
-`[Screenshot placeholder: homepage with textarea, sample prompts, and Analyze Situation button]`
+![Home analyzer screenshot placeholder](screenshots/home.png)
 
 ### OTP Scam Result
 
-`[Screenshot placeholder: OTP scam analysis showing High severity and immediate steps]`
+![OTP scam result screenshot placeholder](screenshots/otp-result.png)
 
 ### Hacked Instagram Result
 
-`[Screenshot placeholder: hacked account analysis with account recovery steps]`
+![Hacked Instagram result screenshot placeholder](screenshots/hacked-instagram.png)
 
 ### Fire Emergency Result
 
-`[Screenshot placeholder: fire in building analysis showing Critical severity]`
+![Fire emergency result screenshot placeholder](screenshots/fire-result.png)
 
 ## Project Structure
 
 ```text
 .
-├── index.html
-├── styles.css
-├── app.js
-├── server.js
-├── package.json
-├── .env.example
-├── PITCH.md
-└── public/
-    └── favicon.svg
+|-- index.html
+|-- styles.css
+|-- app.js
+|-- server.js
+|-- package.json
+|-- .env.example
+|-- PITCH.md
+`-- public/
+    `-- favicon.svg
 ```
 
 ## Submission Summary
