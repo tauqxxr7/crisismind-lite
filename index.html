@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CrisisMind Lite</title>
+    <meta
+      name="description"
+      content="A simple Gemini-powered crisis decision assistant for hackathon demos."
+    />
+    <link rel="icon" href="public/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="badge">Google Gemini Prototype</div>
+        <h1>CrisisMind Lite</h1>
+        <p>
+          A fast AI crisis decision assistant that turns a stressful situation into a
+          simple severity signal and three immediate steps.
+        </p>
+      </section>
+
+      <section class="app-card" aria-labelledby="analyzer-title">
+        <div class="card-header">
+          <div>
+            <h2 id="analyzer-title">Analyze a situation</h2>
+            <p>Describe what happened. Avoid sharing passwords, OTPs, or private IDs.</p>
+          </div>
+          <span class="safety-pill">AI guidance only</span>
+        </div>
+
+        <div class="samples" aria-label="Sample prompts">
+          <button data-prompt="I received an OTP scam message asking me to click a link and share my code.">
+            OTP scam message
+          </button>
+          <button data-prompt="My Instagram account was hacked and someone changed my password.">
+            Hacked Instagram account
+          </button>
+          <button data-prompt="There is smoke in my building and I think there may be a fire.">
+            Fire in building
+          </button>
+        </div>
+
+        <label for="situation">Situation</label>
+        <textarea
+          id="situation"
+          rows="7"
+          placeholder="Example: I got a bank OTP message with a link and the sender is asking me to verify my account..."
+        ></textarea>
+
+        <div class="actions">
+          <button id="analyzeBtn" class="primary">Analyze Situation</button>
+          <span id="status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section id="result" class="result hidden" aria-live="polite">
+        <div class="result-top">
+          <div>
+            <p class="eyebrow">Crisis Type</p>
+            <h2 id="crisisType">-</h2>
+          </div>
+          <div id="severity" class="severity">-</div>
+        </div>
+
+        <div class="steps-block">
+          <p class="eyebrow">3 Immediate Steps</p>
+          <ol id="steps"></ol>
+        </div>
+
+        <div class="note-block">
+          <p class="eyebrow">Safety Note</p>
+          <p id="safetyNote"></p>
+        </div>
+      </section>
+
+      <section class="pitch">
+        <h2>Why it matters</h2>
+        <p>
+          In scams, hacked accounts, harassment, and emergencies, people often panic.
+          CrisisMind Lite gives a clear first-response plan in seconds: classify the
+          situation, show severity, and guide safe next actions.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
