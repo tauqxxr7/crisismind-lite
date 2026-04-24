@@ -90,6 +90,17 @@ p {
   font-size: 1.04rem;
 }
 
+.hero-note,
+.disclaimer-inline {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.hero-note {
+  margin-top: 12px;
+}
+
 .app-card,
 .result,
 .pitch {
@@ -170,6 +181,10 @@ textarea:focus {
   align-items: center;
   gap: 14px;
   margin-top: 16px;
+}
+
+.disclaimer-inline {
+  margin-top: 14px;
 }
 
 .primary {

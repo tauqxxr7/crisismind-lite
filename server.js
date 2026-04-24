@@ -59,6 +59,7 @@ Rules:
 - Severity calibration:
   - OTP, password, recovery-code, phishing-link, or bank fraud attempts should usually be High.
   - Hacked social/email accounts should usually be High.
+  - Threats, extortion, or leaked private photos should usually be High.
   - Smoke, fire, trapped people, violence, or immediate physical danger should be Critical.
   - Use Low only for non-urgent informational concerns.
 - Give exactly 3 immediateSteps.
@@ -182,6 +183,24 @@ function fallbackAnalysis(situation) {
         "Warn close contacts not to trust messages from the compromised account."
       ],
       safetyNote: "Do not share passwords, OTPs, or recovery codes with anyone claiming to help."
+    };
+  }
+
+  if (
+    text.includes("threat") ||
+    text.includes("leaking my photos") ||
+    text.includes("leak") ||
+    text.includes("photos")
+  ) {
+    return {
+      crisisType: "Online threat or image-based harassment",
+      severity: "High",
+      immediateSteps: [
+        "Stop engaging directly and preserve screenshots, usernames, links, and timestamps.",
+        "Report the account or content through the official platform safety tools.",
+        "Tell a trusted person and contact local authorities if the threat becomes immediate or physical."
+      ],
+      safetyNote: "Do not send money, more images, passwords, or private details to anyone making threats."
     };
   }
 

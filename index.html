@@ -17,8 +17,11 @@
         <div class="badge">Google Gemini Prototype</div>
         <h1>CrisisMind Lite</h1>
         <p>
-          A fast AI crisis decision assistant that turns a stressful situation into a
-          simple severity signal and three immediate steps.
+          AI first-response crisis triage assistant that turns a stressful situation
+          into a clear severity signal, immediate actions, and a short safety note.
+        </p>
+        <p class="hero-note">
+          AI guidance only. If you are in immediate danger, contact local emergency services.
         </p>
       </section>
 
@@ -28,18 +31,21 @@
             <h2 id="analyzer-title">Analyze a situation</h2>
             <p>Describe what happened. Avoid sharing passwords, OTPs, or private IDs.</p>
           </div>
-          <span class="safety-pill">AI guidance only</span>
+          <span class="safety-pill">Powered by Google Gemini AI</span>
         </div>
 
         <div class="samples" aria-label="Sample prompts">
-          <button data-prompt="I received an OTP scam message asking me to click a link and share my code.">
+          <button data-prompt="I received an OTP scam message asking me to share my code.">
             OTP scam message
           </button>
-          <button data-prompt="My Instagram account was hacked and someone changed my password.">
+          <button data-prompt="My Instagram account was hacked and I lost access.">
             Hacked Instagram account
           </button>
-          <button data-prompt="There is smoke in my building and I think there may be a fire.">
+          <button data-prompt="There is smoke and possible fire in my building.">
             Fire in building
+          </button>
+          <button data-prompt="Someone is threatening me online and leaking my photos.">
+            Threats and leaked photos
           </button>
         </div>
 
@@ -55,6 +61,9 @@
           <span class="powered-pill">Powered by Google Gemini AI</span>
           <span id="status" role="status" aria-live="polite"></span>
         </div>
+        <p class="disclaimer-inline">
+          AI guidance only. If you are in immediate danger, contact local emergency services.
+        </p>
       </section>
 
       <section id="result" class="result hidden" aria-live="polite">
@@ -70,7 +79,7 @@
         </div>
 
         <div class="steps-block">
-          <p class="eyebrow">3 Immediate Steps</p>
+          <p class="eyebrow">Immediate Actions</p>
           <ol id="steps"></ol>
         </div>
 
