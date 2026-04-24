@@ -10,33 +10,22 @@
 
 [![Source Code](https://img.shields.io/badge/Source_Code-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tauqxxr7/crisismind-lite)
 
-## Overview
-
-CrisisMind Lite is a lightweight AI-powered prototype designed for urgent digital and physical safety scenarios. A user describes a situation in plain language, and the app converts it into a short first-response plan with crisis type, severity, immediate next steps, and a safety note.
-
-This is intentionally not a general chatbot. It is a focused triage product built to produce structured, actionable guidance quickly.
-
 ## Problem
 
-During scams, account hacks, online threats, and physical emergencies, people often panic and do not know what to do first. Search results are slow, official help pages can be overwhelming, and long AI answers are not ideal in urgent moments.
+During scams, hacked accounts, online threats, and physical emergencies, people need immediate structured guidance. Search results are slow, and generic chatbot answers can be too long or too vague in urgent moments.
 
 ## Solution
 
-CrisisMind Lite responds with:
+CrisisMind Lite is a focused AI triage experience that takes a plain-language situation and returns a short first-response plan with crisis type, severity, immediate next steps, and a safety note.
 
-- Crisis type
-- Severity level
-- Three immediate actions
-- One short safety note
+## Features
 
-It also includes fallback guidance when live Gemini analysis is unavailable.
-
-## Why It Stands Out
-
-- Structured output instead of open-ended chatting
-- Safety-first positioning and disclaimers
-- Lightweight product architecture with no heavy framework overhead
-- Useful portfolio piece for AI application design and emergency-oriented UX thinking
+- Crisis type classification
+- Severity tagging
+- Three immediate action steps
+- Safety note output
+- Fallback guidance when Gemini is unavailable
+- Lightweight product structure with no heavy framework dependency
 
 ## Tech Stack
 
@@ -48,26 +37,12 @@ It also includes fallback guidance when live Gemini analysis is unavailable.
 ## Architecture
 
 ```text
-User Situation Input
-  -> Node.js server
-  -> Gemini prompt with response schema
-  -> Structured crisis response
-  -> UI rendering with disclaimer and fallback logic
+User -> browser UI -> Node.js server -> Gemini prompt with schema -> structured response -> UI rendering
 ```
 
-## How Gemini Is Used
+This project is focused on deployability, maintainability, and user experience while keeping the architecture intentionally simple.
 
-Gemini is prompted to:
-
-- classify the crisis
-- assign a severity level
-- return exactly three immediate actions
-- provide one short safety note
-- avoid hallucinated emergency numbers
-
-If Gemini fails or is not configured, the app falls back to rule-based safety guidance for core scenarios.
-
-## Local Setup
+## Setup
 
 ### 1. Clone the repository
 
@@ -85,7 +60,8 @@ copy .env.example .env.local
 ### 3. Add your Gemini API key
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_API_KEY=your_api_key_here
+PORT=3000
 ```
 
 ### 4. Start the app
@@ -101,17 +77,9 @@ npm start
 ## Environment Variables
 
 - `GEMINI_API_KEY` for live Gemini analysis
+- `PORT=3000`
 
-## Demo Flow
-
-1. Open the homepage and show the safety disclaimer.
-2. Run the OTP scam example.
-3. Show the high-severity output and next steps.
-4. Run the hacked-account example.
-5. Run the fire or immediate danger example.
-6. Explain the fallback safety behavior when Gemini is unavailable.
-
-## Screenshots
+## Screenshots / Demo
 
 ### Home / Analyzer
 
@@ -129,17 +97,25 @@ npm start
 
 ![Fire result](screenshots/fire-result.png)
 
-## Demo Placeholder
+## Live Demo
 
-- Live demo: `Add deployment URL here`
+- Demo: `Deployment in progress`
 - Demo video: `Add demo video link here`
-- Presentation deck: `Add PPT or submission deck link here`
+- Source code: `https://github.com/tauqxxr7/crisismind-lite`
 
 ## Future Improvements
 
 - Region-aware emergency support guidance
 - Better category-specific prompting
 - Structured export or handoff mode
-- Analytics on scenario types and response quality
+- Analytics on response quality
 - Multilingual support
-- Cloud deployment with monitoring
+- Hosted deployment with monitoring
+
+## Author
+
+Built by **Tauqeer Bharde** as a focused AI safety and triage project with structured outputs and practical UX considerations.
+
+## Suggested GitHub Topics
+
+`ai, genai, llm, gemini-api, full-stack, nodejs, javascript, safety-tech, prototype, hackathon`
