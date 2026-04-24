@@ -38,6 +38,8 @@ Search results can be slow, support pages can be confusing, and generic chatbot 
 - **Styling:** Custom responsive CSS
 - **Deployment-ready for:** Any Node-capable hosting platform such as Render, Railway, or similar services
 
+> Note: the current submitted prototype is intentionally lightweight and does **not** use Next.js. It uses a plain HTML/CSS/JS frontend with a minimal Node server to keep the demo fast and reliable.
+
 ## How To Run Locally
 
 ### 1. Clone the repository
@@ -90,59 +92,52 @@ Suggested narration:
 
 > CrisisMind Lite is not a generic chatbot. It is a focused crisis triage tool that converts a stressful situation into a short, structured action plan.
 
+## Demo Video
+
+[Watch the recorded demo walkthrough](demo/Recording-CrisisMind-Lite.mp4)
+
 ## Screenshots
 
-Add final prototype screenshots here before submission. The simplest approach is to create a folder named `screenshots`, add PNG/JPG files there, commit them, and reference them using GitHub Markdown.
+The repository now includes the current UI and result screenshots used for submission.
 
 ### How To Add Images In GitHub Markdown
 
-1. Create a folder:
-
-```text
-screenshots/
-```
-
-2. Save your screenshots with simple names:
-
-```text
-screenshots/home.png
-screenshots/otp-result.png
-screenshots/hacked-instagram.png
-screenshots/fire-result.png
-```
-
-3. Add images in this README using this syntax:
+Use this syntax anywhere in `README.md`:
 
 ```md
-![Home analyzer](screenshots/home.png)
+![Alt text](screenshots/file-name.png)
+```
+
+Examples from this project:
+
+```md
+![Home analyzer](screenshots/home-analyzer.png)
 ![OTP scam result](screenshots/otp-result.png)
-![Hacked Instagram result](screenshots/hacked-instagram.png)
-![Fire emergency result](screenshots/fire-result.png)
+![Hacked Instagram result](screenshots/hacked-instagram-result.png)
+![Fire emergency result](screenshots/fire-critical-result.png)
 ```
 
-4. Commit and push:
+If you add new images later:
 
-```bash
-git add screenshots README.md
-git commit -m "Add prototype screenshots"
-git push
-```
+1. Put them in the `screenshots/` folder.
+2. Reference them with `![Alt text](screenshots/your-file.png)`.
+3. Commit and push as usual.
 
 ### Home / Analyzer
 
-![Home analyzer screenshot placeholder](screenshots/home.png)
+![Home analyzer](screenshots/home-analyzer.png)
 
 ### OTP Scam Result
 
-![OTP scam result screenshot placeholder](screenshots/otp-result.png)
+![OTP scam result](screenshots/otp-result.png)
 
 ### Hacked Instagram Result
 
-![Hacked Instagram result screenshot placeholder](screenshots/hacked-instagram.png)
+![Hacked Instagram result](screenshots/hacked-instagram-result.png)
 
 ### Fire Emergency Result
 
-![Fire emergency result screenshot placeholder](screenshots/fire-result.png)
+![Fire emergency result](screenshots/fire-critical-result.png)
 
 ## Project Structure
 
@@ -155,6 +150,13 @@ git push
 |-- package.json
 |-- .env.example
 |-- PITCH.md
+|-- screenshots/
+|   |-- home-analyzer.png
+|   |-- otp-result.png
+|   |-- hacked-instagram-result.png
+|   `-- fire-critical-result.png
+|-- demo/
+|   `-- Recording-CrisisMind-Lite.mp4
 `-- public/
     `-- favicon.svg
 ```
