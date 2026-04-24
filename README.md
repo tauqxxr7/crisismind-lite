@@ -1,111 +1,73 @@
 # CrisisMind Lite
 
-**One-line tagline:**  
-AI first-response crisis triage assistant powered by Google Gemini AI.
+> AI first-response crisis triage assistant powered by Gemini.
 
-CrisisMind Lite is a lightweight AI-powered prototype built for Solution Challenge 2026 / Build with AI. It helps users respond faster during urgent digital and physical safety situations by converting free-text descriptions into a simple, structured first-response plan.
+[![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-111827?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/docs/Web/JavaScript)
+[![Gemini](https://img.shields.io/badge/Gemini_API-1A73E8?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
-## Problem Statement
+[![Source Code](https://img.shields.io/badge/Source_Code-111827?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tauqxxr7/crisismind-lite)
 
-During scams, hacked accounts, online threats, and physical emergencies, people often panic and do not know what to do first. Search results can be slow, official help pages can be hard to navigate, and long chatbot answers are not ideal in moments of urgency.
+## Overview
 
-CrisisMind Lite addresses this by giving users a short, immediate response: identify the crisis, show the severity, list three first actions, and surface a safety note.
+CrisisMind Lite is a lightweight AI-powered prototype designed for urgent digital and physical safety scenarios. A user describes a situation in plain language, and the app converts it into a short first-response plan with crisis type, severity, immediate next steps, and a safety note.
 
-## Solution Overview
+This is intentionally not a general chatbot. It is a focused triage product built to produce structured, actionable guidance quickly.
 
-The user describes a situation in plain language. The app sends that text to a small Node.js server, which calls Google Gemini and asks for a compact structured response. The UI then renders the output as a clear result card with:
+## Problem
 
-- Crisis Type
-- Severity
-- Immediate Actions
-- Safety Note
+During scams, account hacks, online threats, and physical emergencies, people often panic and do not know what to do first. Search results are slow, official help pages can be overwhelming, and long AI answers are not ideal in urgent moments.
 
-This keeps the experience fast, understandable, and suitable for non-technical users.
+## Solution
 
-## Why This Is Not Just A Chatbot
+CrisisMind Lite responds with:
 
-CrisisMind Lite is designed as a focused first-response triage tool, not an open-ended chat interface.
+- Crisis type
+- Severity level
+- Three immediate actions
+- One short safety note
 
-- It uses constrained structured output instead of free-form conversation.
-- It highlights urgency with a visible severity label.
-- It is optimized for first actions, not long explanations.
-- It includes a persistent safety disclaimer to reduce over-reliance on AI.
-- It is intentionally narrow: crisis classification, first actions, and safety guidance.
+It also includes fallback guidance when live Gemini analysis is unavailable.
 
-## Features
+## Why It Stands Out
 
-- One-page crisis triage interface.
-- Free-text situation input.
-- Clickable sample prompts for fast demo flow.
-- Powered by Google Gemini AI.
-- Structured output with:
-  - Crisis Type
-  - Severity
-  - 3 Immediate Actions
-  - 1 Safety Note
-- Safety-first UI disclaimer.
-- Lightweight fallback guidance if Gemini is unavailable.
-- No authentication.
-- No database.
-- No heavy frontend framework.
-
-## Powered By Google Gemini AI
-
-Google Gemini is used as the core intelligence layer behind the prototype. It classifies the situation, estimates severity, and generates short action-oriented guidance. The app keeps the Gemini API key on the server side and does not expose it to the browser.
-
-## SDG Alignment
-
-- **SDG 3: Good Health and Well-being**  
-  Helps users respond more calmly and safely during stressful incidents.
-
-- **SDG 9: Industry, Innovation and Infrastructure**  
-  Demonstrates a practical AI triage workflow using modern cloud-ready architecture.
-
-- **SDG 11: Sustainable Cities and Communities**  
-  Supports safer first responses to emergencies such as fire or building threats.
-
-- **SDG 16: Peace, Justice and Strong Institutions**  
-  Encourages safer escalation, evidence preservation, and official-channel reporting during scams, account compromise, and harassment.
+- Structured output instead of open-ended chatting
+- Safety-first positioning and disclaimers
+- Lightweight product architecture with no heavy framework overhead
+- Useful portfolio piece for AI application design and emergency-oriented UX thinking
 
 ## Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Node.js built-in HTTP server
-- **AI:** Google Gemini API
-- **Deployment target:** Render or any Node-capable host
-
-> The current working submission intentionally stays lightweight and does not use a heavy framework. That keeps the demo fast, reliable, and easy to evaluate.
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js HTTP server
+- AI: Gemini API
+- Deployment target: Render or any Node-capable host
 
 ## Architecture
 
-1. **User Input Layer**  
-   The user describes a suspicious or urgent situation in a single text box or selects a sample prompt.
-
-2. **Gemini Analysis Layer**  
-   The Node server sends the situation to Gemini with a constrained prompt asking for short structured JSON.
-
-3. **Structured Response Rendering**  
-   The browser displays the crisis type, severity, immediate actions, and safety note in a simple result card.
-
-4. **Safety Disclaimer Layer**  
-   The UI reminds the user that the result is AI guidance only and that immediate danger should be escalated to local emergency services.
-
-5. **Fallback Behavior**  
-   If Gemini is unavailable, the app still returns basic safety-first guidance for core demo scenarios.
+```text
+User Situation Input
+  -> Node.js server
+  -> Gemini prompt with response schema
+  -> Structured crisis response
+  -> UI rendering with disclaimer and fallback logic
+```
 
 ## How Gemini Is Used
 
-Gemini is called from the server through the Google Generative Language API. The prompt instructs Gemini to:
+Gemini is prompted to:
 
-- classify the crisis in short plain English
-- assign one of four severity levels
-- provide exactly three immediate actions
+- classify the crisis
+- assign a severity level
+- return exactly three immediate actions
 - provide one short safety note
 - avoid hallucinated emergency numbers
 
-The server validates the shape of the returned content and falls back to rule-based guidance if the AI response fails.
+If Gemini fails or is not configured, the app falls back to rule-based safety guidance for core scenarios.
 
-## How To Run Locally
+## Local Setup
 
 ### 1. Clone the repository
 
@@ -117,7 +79,7 @@ cd crisismind-lite
 ### 2. Create a local environment file
 
 ```bash
-cp .env.example .env.local
+copy .env.example .env.local
 ```
 
 ### 3. Add your Gemini API key
@@ -134,24 +96,20 @@ npm start
 
 ### 5. Open the prototype
 
-```text
-http://localhost:3000
-```
+`http://localhost:3000`
 
 ## Environment Variables
 
-- `GEMINI_API_KEY` - required for live Gemini analysis
+- `GEMINI_API_KEY` for live Gemini analysis
 
 ## Demo Flow
 
-Suggested judge flow:
-
-1. Open the homepage and show the tagline and safety disclaimer.
-2. Click **OTP scam message** and run analysis.
-3. Show the **High** severity output and immediate actions.
-4. Click **Hacked Instagram account** and show account recovery guidance.
-5. Click **Fire in building** and show the **Critical** severity result.
-6. Mention the **Threats and leaked photos** scenario to show broader crisis coverage.
+1. Open the homepage and show the safety disclaimer.
+2. Run the OTP scam example.
+3. Show the high-severity output and next steps.
+4. Run the hacked-account example.
+5. Run the fire or immediate danger example.
+6. Explain the fallback safety behavior when Gemini is unavailable.
 
 ## Screenshots
 
@@ -171,27 +129,17 @@ Suggested judge flow:
 
 ![Fire result](screenshots/fire-result.png)
 
-## Future Scope
+## Demo Placeholder
 
-- Regional emergency support configuration
-- Better category-specific prompting for harassment and fraud
-- PDF export or structured incident handoff
-- Lightweight analytics on prompt categories and response reliability
-- Expanded crisis scenarios and multilingual support
-- Cloud deployment with monitoring and versioned prompt iteration
+- Live demo: `Add deployment URL here`
+- Demo video: `Add demo video link here`
+- Presentation deck: `Add PPT or submission deck link here`
 
-## Render Deployment
+## Future Improvements
 
-To deploy on Render:
-
-- **Build command:** `npm install`
-- **Start command:** `npm start`
-- **Environment variable:** `GEMINI_API_KEY`
-
-Render will run the Node server directly, and the Gemini key will stay server-side.
-
-## Submission Links
-
-- **Demo Video:** `[Add demo video link]`
-- **Live Prototype:** `[Add deployed app link]`
-- **PPT:** `[Add submission PPT link]`
+- Region-aware emergency support guidance
+- Better category-specific prompting
+- Structured export or handoff mode
+- Analytics on scenario types and response quality
+- Multilingual support
+- Cloud deployment with monitoring
