@@ -1,6 +1,6 @@
 # CrisisMind Lite
 
-> AI first-response crisis triage assistant powered by Gemini.
+> Lightweight AI-assisted crisis support interface for supportive interaction flows.
 
 [![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
 [![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
@@ -12,7 +12,7 @@
 
 ## Problem
 
-During scams, hacked accounts, online threats, and physical emergencies, people need immediate structured guidance. Search results are slow, and generic chatbot answers can be too long or too vague in urgent moments.
+During scams, hacked accounts, online threats, and urgent safety situations, people need immediate structured guidance. Search results are slow, and generic chatbot answers can be too long or too vague in stressful moments.
 
 ## Solution
 
@@ -41,6 +41,13 @@ User -> browser UI -> Node.js server -> Gemini prompt with schema -> structured 
 ```
 
 This project is focused on deployability, maintainability, and user experience while keeping the architecture intentionally simple.
+
+## ⚙️ Engineering Notes
+
+- Built with clear frontend/backend/API separation
+- Designed for deployable architecture (Vercel + Render style)
+- Uses modular structure for scalability and maintainability
+- Focused on real-world use cases, not isolated demos
 
 ## Setup
 
@@ -79,29 +86,13 @@ npm start
 - `GEMINI_API_KEY` for live Gemini analysis
 - `PORT=3000`
 
-## Screenshots / Demo
+## 📸 Screenshots
 
-### Home / Analyzer
+Screenshots coming soon
 
-![Home analyzer](screenshots/home.png)
+## 🚀 Deployment
 
-### OTP Result
-
-![OTP result](screenshots/otp-result.png)
-
-### Hacked Account Result
-
-![Hacked account result](screenshots/hacked-account.png)
-
-### Fire Result
-
-![Fire result](screenshots/fire-result.png)
-
-## Live Demo
-
-- Demo: `Deployment in progress`
-- Demo video: `Add demo video link here`
-- Source code: `https://github.com/tauqxxr7/crisismind-lite`
+Deployment in progress (planned: Vercel / Render)
 
 ## Future Improvements
 
@@ -118,4 +109,4 @@ Built by **Tauqeer Bharde** as a focused AI safety and triage project with struc
 
 ## Suggested GitHub Topics
 
-`ai, genai, llm, gemini-api, full-stack, nodejs, javascript, safety-tech, prototype, hackathon`
+`ai, crisis-support, supportive-ai, chatbot, javascript, frontend, social-impact`
